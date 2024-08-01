@@ -1,0 +1,22 @@
+@import "_colors";
+.courses {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  position: relative;
+  h1 {
+    font-size: 3rem;
+    padding-top: 4rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 6.5rem;
+  }
+}

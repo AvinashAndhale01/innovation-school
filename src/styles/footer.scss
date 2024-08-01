@@ -1,0 +1,82 @@
+@import "_colors";
+.footer {
+  display: flex;
+  background-color: $secondary-color;
+  color: #fff;
+  height: 10rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7rem;
+  padding: 0 18rem;
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 300;
+      }
+      .social-icon {
+        a {
+          transition: transform 0.8s ease-in-out;
+          img {
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+
+          .social-media-icon {
+            height: 30px;
+            width: 30px;
+            margin: 1rem 1.5rem 0 0;
+          }
+        }
+      }
+    }
+  }
+  .usefull-links {
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.8rem;
+
+      a {
+        margin-top: 0.5rem;
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+          color: rgb(17, 17, 17);
+        }
+      }
+    }
+  }
+  .contact-us {
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.8rem;
+      p {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  p {
+    margin-top: 2.5rem;
+  }
+}

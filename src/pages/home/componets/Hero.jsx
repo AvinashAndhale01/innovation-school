@@ -1,5 +1,5 @@
-import "../styles/hero.scss";
-import { logo1 } from "../assets/icons";
+import "./hero.scss";
+import { logo1 } from "../../../assets/icons";
 const Hero = () => {
   return (
     <>

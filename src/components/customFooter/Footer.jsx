@@ -1,5 +1,5 @@
-import "../styles/footer.scss";
-import { instagram, linkedin, youtube, twitterx } from "../assets/icons";
+import "./footer.scss";
+import { instagram, linkedin, youtube, twitterx } from "../../assets/icons";
 const Footer = () => {
   return (
     <footer className="footer">

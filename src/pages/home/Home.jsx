@@ -1,5 +1,5 @@
-import Courses from "./Courses";
-import Hero from "./Hero";
+import Courses from "./componets/Courses";
+import Hero from "./componets/Hero";
 
 const Home = () => {
   return (

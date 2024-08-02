@@ -1,6 +1,6 @@
-import Card from "../components/Card";
-import "../styles/courses.scss";
-import { lc1, lc2 } from "../assets/images";
+import Card from "../../../components/customCard/Card";
+import "./courses.scss";
+import { lc1, lc2 } from "../../../assets/images";
 
 const Courses = () => {
   return (

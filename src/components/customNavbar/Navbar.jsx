@@ -1,8 +1,10 @@
-import "../styles/navbar.scss";
+import "./navbar.scss";
 import { Link } from "react-router-dom";
-import { logo } from "../assets/icons";
+import { logo } from "../../assets/icons";
 
 const Navbar = () => {
+
+  
   return (
     <div className="nav">
       <nav className="navbar">
@@ -14,7 +16,7 @@ const Navbar = () => {
             <Link to="/" className="li">
               Home
             </Link>
-            <Link to="#course" className="li">
+            <Link to="/course" className="li">
               Courses
             </Link>
             <Link to="/about" className="li">

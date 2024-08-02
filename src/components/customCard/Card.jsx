@@ -1,4 +1,4 @@
-import "../styles/card.scss";
+import "./card.scss";
 const Card = ({ lc }) => {
   return (
     <div className="card">

@@ -1,25 +1,35 @@
 .about {
   position: relative;
-  height: calc(100vh - 19rem);
+  height: calc(100vh - 24rem);
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 2rem 25rem;
   background-color: #fff;
 
   h3 {
-    font-size: 3rem;
-    font-weight: 400;
-    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
   }
-  p {
-    font-size: 1rem;
-    font-weight: 350;
-    letter-spacing: 0.1rem;
-    word-spacing: 0.25em;
-    text-align: justify;
-    margin: 1rem;
+  .description {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h4 {
+      margin: 2rem 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.09rem;
+      word-spacing: 0.25em;
+      text-align: justify;
+      margin: 1rem;
+    }
   }
 }

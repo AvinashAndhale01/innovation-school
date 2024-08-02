@@ -3,21 +3,25 @@ import "./about.scss";
 const About = () => {
   return (
     <section className="about">
-      <h3>About Us</h3>
-      <img alt="about us" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-        placeat voluptates, adipisci obcaecati aspernatur eos doloremque! Amet
-        sit sequi reiciendis nisi nihil vitae, quam facilis et incidunt pariatur
-        aperiam laboriosam. Vero quas et exercitationem voluptatem officiis
-        delectus quidem doloribus quaerat recusandae quod? Ad modi iste nostrum,
-        accusantium qui cum debitis aspernatur sit commodi dolor necessitatibus
-        quod, ratione illo animi deleniti eveniet aut sapiente maiores in eaque
-        ut atque quibusdam fuga. Qui maxime praesentium natus corrupti possimus
-        molestias doloribus culpa atque adipisci, sit commodi nisi laborum
-        voluptas, totam impedit, deleniti consequuntur consequatur obcaecati
-        ipsa est magni earum. Laboriosam at assumenda inventore.
-      </p>
+      <h3>INNOVATION SCHOOL: Learn, Grow, Succeed!</h3>
+      <div className="description">
+        <h4>About The Innovation School:</h4>
+        <p>
+          Innovation School is a premier international startup committed to
+          providing cutting-edge education and fostering growth in diverse
+          fields including Artificial Intelligence, Law, Design, Marketing,
+          Business, IT & Computer Science Foreign Study, and International
+          Programs. Wetogether leading experts to help students achieve
+          unparalleled success. Join us on a journey of growth and excellence.
+        </p>
+        <h4>Our Mission:</h4>
+        <p>
+          To provide quality education for the world. To empower individuals
+          with the skills and knowledge needed to become the top 1% of
+          professionals in their fields, driving innovation and excellence
+          globally.
+        </p>
+      </div>
     </section>
   );
 };

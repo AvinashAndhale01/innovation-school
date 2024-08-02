@@ -1,5 +1,7 @@
 import "./footer.scss";
 import { instagram, linkedin, youtube, twitterx } from "../../assets/icons";
+import { Link } from "react-router-dom";
+import { email, phone } from "../../assets/icons";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -9,36 +11,51 @@ const Footer = () => {
             <h4>Follow On</h4>
           </div>
           <div className="social-icon">
-            <a href="#">
-              <img className="social-media-icon" src={instagram} />
+            <a
+              href="https://www.instagram.com/innovationschoolio?igsh=MXJsMmlxYTh1N3g2bw=="
+              target="_blank"
+            >
+              <img className="social-media-icon instagram" src={instagram} />
             </a>
-            <a href="#">
-              <img className="social-media-icon" src={linkedin} />
+            <a
+              href="https://www.linkedin.com/company/legal-innovation-global/"
+              target="_blank"
+            >
+              <img className="social-media-icon linkedin" src={linkedin} />
             </a>
-            <a href="#">
-              <img className="social-media-icon" src={youtube} />
+            <a
+              href="https://youtube.com/@innovation_school.?si=LA95HZHVmXpItTjs"
+              target="_blank"
+            >
+              <img className="social-media-icon youtube" src={youtube} />
             </a>
-            <a href="#">
-              <img className="social-media-icon" src={twitterx} />
+            <a href="https://x.com/innovtionschool" target="_blank">
+              <img className="social-media-icon twitterx" src={twitterx} />
             </a>
           </div>
         </div>
         <div className="usefull-links">
           <h4>Company</h4>
           <div className="info">
-            <a href="#">About Us</a>
+            <Link to={"/about"}>About Us</Link>
             <a href="#"> Privacy policy</a>
           </div>
         </div>
         <div className="contact-us">
           <h4>Get Contact</h4>
           <div className="info">
-            <p>Phone: +91 7821807146</p>
-            <p>Email: innovationschool8@gmail.com</p>
+            <div className="phone icon">
+              <img src={phone} />
+              <p> +91 7821807146</p>
+            </div>
+            <div className="email icon">
+              <img src={email} />
+              <p>innovationschool8@gmail.com</p>
+            </div>
           </div>
         </div>
       </div>
-      <p> Copyright &copy; Innvation School</p>
+      <p> Copyright &copy; 2024 Innovation School</p>
     </footer>
   );
 };

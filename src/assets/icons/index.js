@@ -5,5 +5,17 @@ import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import youtube from "./youtube.svg";
 import twitterx from "./twitterx.svg";
+import email from "./email.png";
+import phone from "./phone.png";
 
-export { logo, logo_dark, logo1, instagram, linkedin, youtube, twitterx };
+export {
+  logo,
+  logo_dark,
+  logo1,
+  instagram,
+  linkedin,
+  youtube,
+  twitterx,
+  email,
+  phone,
+};

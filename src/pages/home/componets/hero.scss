@@ -7,7 +7,7 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 10rem 4rem;
-  background-image: url("../assets/images/grid1.jpg");
+  background-image: url("/src/assets/images/lc2");
   background-size: cover;
 
   .hero-image {
@@ -16,12 +16,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // flex: 2;
     animation: upDown 4s ease-in-out infinite;
 
     img {
       height: 18rem;
-      width: auto; // Maintains aspect ratio
+      width: auto;
     }
   }
 
@@ -166,12 +165,12 @@
 /* Mobile screens */
 @media (max-width: 480px) {
   .hero {
-    padding: 3rem 1.5rem;
+    padding: 0 1.5rem;
     .hero-image {
       height: 10rem;
       width: 100%;
       img {
-        height: 12rem;
+        height: 10rem;
       }
     }
 

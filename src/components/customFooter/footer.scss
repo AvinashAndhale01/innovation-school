@@ -144,9 +144,15 @@
       width: 100%;
       align-items: center;
       justify-content: center;
+      p {
+        font-size: 0.8rem;
+      }
 
       .usefull-links {
         margin-top: 3rem;
+        .info-d {
+          font-size: 0.8rem;
+        }
       }
       .contact-us {
         margin-top: 4rem;
@@ -154,7 +160,39 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        .icon {
+          img {
+            height: 20px;
+            width: 20px;
+          }
+        }
       }
     }
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+  .footer {
+    padding: 0;
+    .container {
+      p,
+      Link {
+        font-size: 0.8rem;
+      }
+      .icon {
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
+      .info-d {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 1216px) {
+  .footer {
+    padding: 0;
   }
 }

@@ -37,8 +37,13 @@ const Footer = () => {
         <div className="usefull-links">
           <h4>Company</h4>
           <div className="info">
-            <Link to={"/about"}>About Us</Link>
-            <a href="#"> Privacy policy</a>
+            <Link to={"/about"} className="info-d">
+              About Us
+            </Link>
+            <a href="#" className="info-d">
+              {" "}
+              Privacy policy
+            </a>
           </div>
         </div>
         <div className="contact-us">

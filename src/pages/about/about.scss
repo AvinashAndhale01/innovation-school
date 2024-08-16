@@ -1,28 +1,33 @@
 .about {
   position: relative;
-  height: calc(100vh - 24rem);
+  // height: calc(100vh - 8rem);
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 25rem;
+  padding: 2rem 15rem;
   background-color: #fff;
 
   h3 {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
+    text-align: center;
   }
+
   .description {
     padding: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     h4 {
       margin: 2rem 0;
       font-size: 1.2rem;
       font-weight: 600;
+      text-align: center;
     }
+
     p {
       font-size: 1rem;
       font-weight: 400;
@@ -30,6 +35,70 @@
       word-spacing: 0.25em;
       text-align: justify;
       margin: 1rem;
+    }
+  }
+
+  // Media Queries
+  @media (max-width: 1200px) {
+    /* Laptop */
+    padding: 2rem 10rem;
+
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    .description {
+      padding: 2.5rem;
+
+      h4 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* iPad */
+    padding: 2rem 5rem;
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    .description {
+      padding: 2rem;
+
+      h4 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Mobile */
+    padding: 1.5rem 2rem;
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    .description {
+      padding: 1.5rem;
+
+      h4 {
+        font-size: 0.9rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
     }
   }
 }

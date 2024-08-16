@@ -1,4 +1,5 @@
 @import "../../../styles/colors";
+
 .courses {
   height: auto;
   display: flex;
@@ -6,6 +7,7 @@
   align-items: center;
   color: #000;
   position: relative;
+
   h1 {
     font-size: 3rem;
     padding-top: 4rem;
@@ -18,5 +20,32 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 2rem 6.5rem;
+  }
+
+  .card {
+    flex: 1 1 calc(33.333% - 2rem); // Default for laptop: 3 cards per row
+    margin: 1rem;
+  }
+
+  // Adjustments for tablets (iPad)
+  @media (max-width: 1024px) {
+    .card-section {
+      padding: 2rem 3rem; // Adjust padding for smaller screens
+    }
+
+    .card {
+      flex: 1 1 calc(50% - 2rem); // Two cards per row on tablets
+    }
+  }
+
+  // Adjustments for mobile devices
+  @media (max-width: 768px) {
+    .card-section {
+      padding: 1rem; // Further adjust padding for mobile screens
+    }
+
+    .card {
+      flex: 1 1 calc(100% - 2rem); // One card per row on mobile
+    }
   }
 }

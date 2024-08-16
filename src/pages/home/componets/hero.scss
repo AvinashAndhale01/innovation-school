@@ -1,24 +1,27 @@
 @import "../../../styles/colors.scss";
 
 .hero {
-  height: calc(100vh);
+  height: 100vh;
+  width: 98vw;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 9rem;
+  padding: 10rem 4rem;
   background-image: url("../assets/images/grid1.jpg");
-  background-size: 400px 200px;
+  background-size: cover;
 
   .hero-image {
-    height: 35rem;
-    width: 50rem;
+    height: 30rem;
+    max-width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 2;
+    // flex: 2;
     animation: upDown 4s ease-in-out infinite;
+
     img {
-      height: 23rem;
+      height: 18rem;
+      width: auto; // Maintains aspect ratio
     }
   }
 
@@ -27,24 +30,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 3;
 
     h1 {
-      font-size: 5rem;
+      font-size: 4rem;
       padding: 3rem;
       font-weight: 500;
       margin-top: -3rem;
+      text-align: center;
       span {
         color: crimson;
       }
     }
+
     h3 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 400;
       text-align: center;
     }
+
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       width: 45rem;
       padding: 1.4rem;
       font-weight: 300;
@@ -64,5 +69,125 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+/* Laptop screens */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 5rem;
+    .hero-image {
+      height: 30rem;
+      width: 40rem;
+      img {
+        height: 20rem;
+      }
+    }
+
+    .hero-des {
+      h1 {
+        font-size: 4rem;
+        padding: 2rem;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+      p {
+        width: 35rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* iPad screens */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 4rem 2rem; /* Adjust padding to fit smaller screens */
+    .hero-image {
+      height: 25rem;
+      width: 100%;
+      margin-bottom: 2rem;
+      img {
+        height: 18rem;
+        width: auto; /* Maintains aspect ratio */
+      }
+    }
+
+    .hero-des {
+      h1 {
+        font-size: 3.5rem; /* Reduce font size */
+        padding: 1.5rem;
+      }
+      h3 {
+        font-size: 1.8rem; /* Adjust subtitle size */
+      }
+      p {
+        width: 100%; /* Adjust text width */
+        font-size: 0.95rem; /* Smaller font size for better readability */
+        padding: 1rem;
+        text-align: justify; /* Justify text for a cleaner look */
+      }
+    }
+  }
+}
+
+/* Landscape iPad (wider screens but still considered tablet) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    padding: 6rem 4rem; /* Adjust padding for landscape mode */
+    .hero-image {
+      height: 30rem;
+      width: 45rem;
+      img {
+        height: 15rem;
+        width: auto;
+      }
+    }
+
+    .hero-des {
+      h1 {
+        font-size: 4rem; /* Slightly larger for landscape */
+        padding: 2rem;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+      p {
+        width: 90%; /* Wider text for landscape */
+        font-size: 1rem;
+        padding: 1.2rem;
+      }
+    }
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1.5rem;
+    .hero-image {
+      height: 10rem;
+      width: 100%;
+      img {
+        height: 12rem;
+      }
+    }
+
+    .hero-des {
+      h1 {
+        font-size: 2.5rem;
+        padding: 1rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      p {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 0.5rem;
+      }
+    }
   }
 }

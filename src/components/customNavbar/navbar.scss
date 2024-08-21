@@ -48,11 +48,10 @@
     .navbar {
       justify-content: center;
       flex-direction: column;
-      // height: 14vh;
+      padding: 0;
 
       .menu-list{
         display: none;
-        // padding: 20px 0;
       }
     }
   }

@@ -42,16 +42,17 @@
 
   // Adjustments for mobile devices
   @media (max-width: 768px) {
+    h1{
+      font-size: 2rem;
+    }  
     .card-section {
       padding: 1rem; // Further adjust padding for mobile screens
       grid-template-columns: 1fr;
 
     }
-
     .card {
       flex: 1 1 calc(100% - 2rem); // One card per row on mobile
-    }
-    
+    } 
   
   }
 }

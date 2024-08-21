@@ -41,56 +41,19 @@
         }
       }
     }
+  }
+}
+  // For mobile devices and tablets
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: center;
+      flex-direction: column;
+      // height: 14vh;
 
-    &.mobile-menu {
-      position: absolute;
-      top: 5rem;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      border-bottom: 2px solid rgba(63, 63, 63, 0.226);
-      box-shadow: 0px 2px 10px rgba(92, 92, 92, 0.226);
-
-      ul {
-        flex-direction: column;
-
-        .li {
-          margin: 1rem 0;
-          text-align: center;
-        }
+      .menu-list{
+        display: none;
+        // padding: 20px 0;
       }
     }
   }
 
-  .hamburger {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  // For mobile devices
-  @media (max-width: 768px) {
-    .menu-list {
-      display: none;
-    }
-
-    .hamburger {
-      display: block;
-    }
-
-    .menu-list.mobile-menu {
-      display: block;
-    }
-  }
-
-  // For tablet and larger screens (iPad and laptops)
-  @media (min-width: 769px) {
-    .hamburger {
-      display: none;
-    }
-
-    .menu-list {
-      display: flex;
-    }
-  }
-}

@@ -4,9 +4,6 @@ const Hero = () => {
   return (
     <>
       <main className="hero">
-        <div className="hero-image">
-          <img src={logo1} alt="hero-img" />
-        </div>
         <div className="hero-des">
           <h1>
             Innova<span>tion</span> School

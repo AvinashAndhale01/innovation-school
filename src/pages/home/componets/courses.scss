@@ -7,19 +7,20 @@
   align-items: center;
   color: #000;
   position: relative;
+  background-color: #eefdff;
 
   h1 {
     font-size: 3rem;
     padding-top: 4rem;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   .card-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2rem 6.5rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 30px;
+   padding: 50px 0px;
   }
 
   .card {
@@ -31,6 +32,8 @@
   @media (max-width: 1024px) {
     .card-section {
       padding: 2rem 3rem; // Adjust padding for smaller screens
+      grid-template-columns: 1fr 1fr;
+
     }
 
     .card {
@@ -40,12 +43,17 @@
 
   // Adjustments for mobile devices
   @media (max-width: 768px) {
+    h1{
+      font-size: 2rem;
+    }  
     .card-section {
       padding: 1rem; // Further adjust padding for mobile screens
-    }
+      grid-template-columns: 1fr;
 
+    }
     .card {
       flex: 1 1 calc(100% - 2rem); // One card per row on mobile
-    }
+    } 
+  
   }
 }

@@ -144,15 +144,8 @@
       width: 100%;
       align-items: center;
       justify-content: center;
-      p {
-        font-size: 0.8rem;
-      }
-
       .usefull-links {
         margin-top: 3rem;
-        .info-d {
-          font-size: 0.8rem;
-        }
       }
       .contact-us {
         margin-top: 4rem;
@@ -160,12 +153,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        .icon {
-          img {
-            height: 20px;
-            width: 20px;
-          }
-        }
       }
     }
   }

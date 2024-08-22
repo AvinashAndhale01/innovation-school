@@ -1,5 +1,4 @@
 import "./hero.scss";
-import { logo1 } from "../../../assets/icons";
 const Hero = () => {
   return (
     <>

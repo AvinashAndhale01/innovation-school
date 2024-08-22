@@ -5,12 +5,11 @@
   justify-content: space-evenly;
   align-items: center;
   height: 90vh;
-  position: relative; /* Required for absolute positioning of pseudo-elements */
-  background-color: #17a2b8; /* Solid background color */
+  position: relative;
+  background-color: #17a2b8;
   color: white;
-  overflow: hidden; /* Prevents overflow issues with the background image */
+  overflow: hidden;
 
-  /* Pseudo-element for the background image */
   &::before {
     content: "";
     position: absolute;
@@ -21,22 +20,8 @@
     background-image: url("/src/assets/images/background.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.08; /* Adjust opacity as needed */
-    z-index: 1; /* Place it behind the content */
-  }
-
-  .hero-image {
-    height: 30rem;
-    max-width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: upDown 4s ease-in-out infinite;
-
-    img {
-      height: 18rem;
-      width: auto;
-    }
+    opacity: 0.08;
+    z-index: 1;
   }
 
   .hero-des {
@@ -44,7 +29,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 1; /* Ensure text is above the background image */
+    z-index: 1;
 
     h1 {
       font-size: 4rem;
@@ -76,30 +61,9 @@
   }
 }
 
-@keyframes upDown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-25px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* Laptop screens */
 @media (max-width: 1024px) {
   .hero {
     padding: 5rem;
-    .hero-image {
-      height: 30rem;
-      width: 40rem;
-      img {
-        height: 20rem;
-      }
-    }
-
     .hero-des {
       h1 {
         font-size: 4rem;
@@ -116,34 +80,24 @@
   }
 }
 
-/* iPad screens */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
-    padding: 4rem 2rem; /* Adjust padding to fit smaller screens */
-    .hero-image {
-      height: 25rem;
-      width: 100%;
-      margin-bottom: 2rem;
-      img {
-        height: 18rem;
-        width: auto; /* Maintains aspect ratio */
-      }
-    }
+    padding: 4rem 2rem;
 
     .hero-des {
       h1 {
-        font-size: 3.5rem; /* Reduce font size */
+        font-size: 3.5rem;
         padding: 1.5rem;
       }
       h3 {
-        font-size: 1.8rem; /* Adjust subtitle size */
+        font-size: 1.8rem;
       }
       p {
-        width: 100%; /* Adjust text width */
-        font-size: 0.95rem; /* Smaller font size for better readability */
+        width: 100%;
+        font-size: 0.95rem;
         padding: 1rem;
-        text-align: justify; /* Justify text for a cleaner look */
+        text-align: justify;
       }
     }
   }

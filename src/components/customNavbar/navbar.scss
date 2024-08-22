@@ -43,16 +43,15 @@
     }
   }
 }
-  // For mobile devices and tablets
-  @media (max-width: 768px) {
-    .navbar {
-      justify-content: center;
-      flex-direction: column;
-      padding: 0;
+// For mobile devices
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
 
-      .menu-list{
-        display: none;
-      }
+    .menu-list {
+      display: none;
     }
   }
-
+}

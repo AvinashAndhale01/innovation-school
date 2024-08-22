@@ -1,19 +1,20 @@
 import Card from "../../../components/customCard/Card";
+import { courses } from "../../../utils/data";
 import "./courses.scss";
-import { lc1, lc2 } from "../../../assets/images";
+import { useState } from "react";
 
 const Courses = () => {
+  const [course, setCourse] = useState(courses);
   return (
     <>
       <section id="course" className="courses">
-        <h1 className="course-heading">Co<span style={{color:"#17a2b8"}}>urs</span>es</h1>
+        <h1 className="course-heading">
+          Co<span style={{ color: "#17a2b8" }}>urs</span>es
+        </h1>
         <section className="card-section">
-          <Card lc={lc1} />
-          <Card lc={lc2} />
-          <Card lc={lc1} />
-          <Card lc={lc2} />
-          <Card lc={lc1} />
-          <Card lc={lc2} />
+          {course?.map((course) => (
+            <Card courses={course} />
+          ))}
         </section>
       </section>
     </>

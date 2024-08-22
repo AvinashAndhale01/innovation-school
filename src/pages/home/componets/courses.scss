@@ -17,43 +17,26 @@
   }
 
   .card-section {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   gap: 30px;
-   padding: 50px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 50px 0px;
   }
 
-  .card {
-    flex: 1 1 calc(33.333% - 2rem); // Default for laptop: 3 cards per row
-    margin: 1rem;
-  }
-
-  // Adjustments for tablets (iPad)
   @media (max-width: 1024px) {
     .card-section {
-      padding: 2rem 3rem; // Adjust padding for smaller screens
+      padding: 2rem 3rem;
       grid-template-columns: 1fr 1fr;
-
-    }
-
-    .card {
-      flex: 1 1 calc(50% - 2rem); // Two cards per row on tablets
     }
   }
 
-  // Adjustments for mobile devices
   @media (max-width: 768px) {
-    h1{
+    h1 {
       font-size: 2rem;
-    }  
-    .card-section {
-      padding: 1rem; // Further adjust padding for mobile screens
-      grid-template-columns: 1fr;
-
     }
-    .card {
-      flex: 1 1 calc(100% - 2rem); // One card per row on mobile
-    } 
-  
+    .card-section {
+      padding: 1rem;
+      grid-template-columns: 1fr;
+    }
   }
 }

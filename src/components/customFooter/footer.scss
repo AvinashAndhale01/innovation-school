@@ -1,28 +1,25 @@
-/* footer.scss */
 .footer {
-  background-color: #00394f; /* Black background for the footer */
-  color: #fff; /* White text for contrast */
-  padding: 40px 0; /* Top and bottom padding */
-
-  /* Space between columns */
-  text-align: center; /* Center text alignment */
+  background-color: #00394f;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 0 70px;
 }
 
 .social-media,
 .useful-links,
 .contact-us {
-  h4 {
-    color: #17a2b8;
-  }
   display: flex;
   flex-direction: column;
   align-items: center;
+  h4 {
+    color: #17a2b8;
+  }
 }
 
 .social-media {
@@ -49,7 +46,7 @@
 
 .social-icon {
   display: flex;
-  gap: 15px; /* Space between icons */
+  gap: 15px;
 }
 
 .social-media-icon {
@@ -64,12 +61,12 @@
 .info-d {
   display: block;
   margin-bottom: 10px;
-  color: white; /* Bright color for links */
+  color: white;
   text-decoration: none;
 }
 
 .info-d:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
 }
 
 .icon {
@@ -85,15 +82,15 @@
 }
 
 .footer-bottom {
-  grid-column: span 3; /* Span the entire width */
-  text-align: center; /* Center align text */
+  grid-column: span 3;
+  text-align: center;
   margin-top: 20px;
-  padding: 10px 0; /* Slightly different background color for the bottom section */
+  padding: 10px 0;
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    grid-template-columns: 1fr; /* Three equal columns */
+    grid-template-columns: 1fr;
     padding: 20px 0;
     gap: 30px;
   }

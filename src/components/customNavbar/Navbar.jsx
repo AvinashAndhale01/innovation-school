@@ -7,10 +7,10 @@ const Navbar = () => {
     <div className="nav">
       <nav className="navbar">
         <div className="company-logo">
-          <img src={logo} alt="innovation school" />
+          <Link to="/">
+            <img src={logo} alt="innovation school" />
+          </Link>
         </div>
-
-        {/* Navigation links */}
         <div className="menu-list">
           <ul>
             <Link to="/" className="li">

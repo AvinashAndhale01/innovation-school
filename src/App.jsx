@@ -5,7 +5,7 @@ import Footer from "./components/customFooter/Footer";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Courses from "./pages/home/componets/Courses";
-import CourseDescription from "./pages/courses/components/CourseDescription";
+import CourseDescription from "./pages/courses/CourseDescription";
 function App() {
   return (
     <Router>

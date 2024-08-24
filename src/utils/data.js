@@ -33,9 +33,10 @@ export const courses = [
 
 export const courseInfo = {
   Title: "Introduction to Web Development",
+  Des: "Get 100K+ followers. Monetise your Instagram presence.",
   About:
     "This course covers the fundamentals of web development, including HTML, CSS, and JavaScript.",
-  Img: "https://example.com/course-image.jpg",
+  Img: "https://media.istockphoto.com/id/2019979263/photo/legal-rights-concept-statue-of-lady-justice-holding-scales-of-justice.jpg?s=2048x2048&w=is&k=20&c=mJ9aVsNTbc9VscTBof7YqBnDZx5csDt2N-lQvDVLuwc=",
   Price: 1000,
   Guide: [
     {

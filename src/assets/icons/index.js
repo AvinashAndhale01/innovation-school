@@ -7,6 +7,10 @@ import youtube from "./youtube.svg";
 import twitterx from "./twitterx.svg";
 import email from "./email.png";
 import phone from "./phone.png";
+import internship from "./internship.png";
+import play from "./play.png";
+import certificate from "./certificate.png";
+import freelancer from "./freelancer.png";
 
 export {
   logo,
@@ -18,4 +22,8 @@ export {
   twitterx,
   email,
   phone,
+  freelancer,
+  play,
+  certificate,
+  internship,
 };

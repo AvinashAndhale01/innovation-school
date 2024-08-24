@@ -1,0 +1,89 @@
+.courseabout {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 50px 10px;
+  .heading {
+    text-align: center;
+    margin: 20px 0;
+    h2 {
+      font-size: 32px;
+      text-transform: uppercase;
+      color: #17a2b8;
+      font-weight: 700;
+    }
+  }
+  .aboutdes {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    color: #00394f;
+    line-height: 25px;
+    word-spacing: 1px;
+    margin-top: 40px;
+    .vector-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        height: 300px;
+      }
+    }
+    .description {
+      p {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .des-head {
+        margin: 30px 0 20px 0;
+        font-size: 20px;
+        font-weight: 500;
+        color: #17a2b8;
+      }
+      .list {
+        ul {
+          line-height: 40px;
+          li {
+            padding-left: 30px;
+            background-image: url("../../../assets/icons/checklist.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            list-style-type: none;
+            background-size: 20px 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .courseabout {
+    .heading {
+      h2 {
+        font-size: 26px;
+      }
+    }
+    .aboutdes {
+      flex-direction: column;
+      .vector-img {
+        img {
+          height: 280px;
+        }
+      }
+      .description {
+        p {
+          font-size: 12px;
+          line-height: 20px;
+        }
+        .des-head {
+          font-size: 14px;
+        }
+        .list {
+          ul {
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

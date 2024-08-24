@@ -35,7 +35,7 @@ export const courseInfo = {
   Title: "Introduction to Web Development",
   Des: "Get 100K+ followers. Monetise your Instagram presence.",
   About:
-    "This course covers the fundamentals of web development, including HTML, CSS, and JavaScript.",
+    "The web development course provides an in-depth exploration of building modern, responsive websites and web applications. You'll start with the basics of HTML, CSS, and JavaScript, gradually advancing to more complex topics like front-end frameworks (React, Angular) and back-end technologies (Node.js, Express). The course also covers essential aspects of database management, RESTful APIs, and version control with Git. Practical projects and hands-on exercises will solidify your understanding, allowing you to build real-world applications by the end of the course. Whether you're a beginner or looking to enhance your skills, this course equips you with the tools needed for a successful web development career.",
   Img: "https://media.istockphoto.com/id/2019979263/photo/legal-rights-concept-statue-of-lady-justice-holding-scales-of-justice.jpg?s=2048x2048&w=is&k=20&c=mJ9aVsNTbc9VscTBof7YqBnDZx5csDt2N-lQvDVLuwc=",
   Price: 1000,
   Guide: [

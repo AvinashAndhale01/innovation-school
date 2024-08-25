@@ -41,13 +41,38 @@ export const courseInfo = {
   Guide: [
     {
       Name: "John Doe",
-      Img: "https://example.com/john-doe.jpg",
-      Identity: "Senior Web Developer",
+      Img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      LinkedinId: "https://www.linkedin.com/in/ankit-mishra07",
+      Identity:
+        "A senior developer is an experienced software engineer who leads development projects, mentors junior developers, and ensures code quality and efficient project delivery. They possess deep technical expertise and strong problem-solving skills, driving innovation and best practices in software development.",
     },
     {
       Name: "Jane Smith",
-      Img: "https://example.com/jane-smith.jpg",
-      Identity: "Frontend Engineer",
+      Img: "https://media.istockphoto.com/id/1369746033/photo/portrait-of-a-handsome-young-businessman-working-in-office.jpg?s=2048x2048&w=is&k=20&c=Zv_d4Mry2Sice0-J22nHx-06dIJeVZPU65-GcfyJBOE=",
+      LinkedinId: "https://www.linkedin.com/in/shubham-upadhyay1",
+      Identity:
+        "A frontend engineer specializes in creating user interfaces, ensuring seamless user experiences through responsive and interactive web designs. They excel in HTML, CSS, JavaScript, and modern frameworks to build visually appealing and functional applications.",
+    },
+    {
+      Name: "John Doe",
+      Img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      LinkedinId: "https://www.linkedin.com/in/ankit-mishra07",
+      Identity:
+        "A senior developer is an experienced software engineer who leads development projects, mentors junior developers, and ensures code quality and efficient project delivery. They possess deep technical expertise and strong problem-solving skills, driving innovation and best practices in software development.",
+    },
+    {
+      Name: "John Doe",
+      Img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      LinkedinId: "https://www.linkedin.com/in/ankit-mishra07",
+      Identity:
+        "A senior developer is an experienced software engineer who leads development projects, mentors junior developers, and ensures code quality and efficient project delivery. They possess deep technical expertise and strong problem-solving skills, driving innovation and best practices in software development.",
+    },
+    {
+      Name: "John Doe",
+      Img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      LinkedinId: "https://www.linkedin.com/in/ankit-mishra07",
+      Identity:
+        "A senior developer is an experienced software engineer who leads development projects, mentors junior developers, and ensures code quality and efficient project delivery. They possess deep technical expertise and strong problem-solving skills, driving innovation and best practices in software development.",
     },
   ],
   Curriculum: [

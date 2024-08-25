@@ -6,6 +6,7 @@ import Header from "./header/Header";
 import CourseHero from "./coursehero/CourseHero";
 import CourseAbout from "./coursehero/CourseAbout";
 import KeyFeature from "./keyfeatures/KeyFeature";
+import Mentor from "./mentor/Mentor";
 
 const CourseDescription = () => {
   const { id } = useParams();
@@ -17,6 +18,7 @@ const CourseDescription = () => {
         <CourseHero courseInfor={courseDetail} />
         <CourseAbout courseInfor={courseDetail} />
         <KeyFeature />
+        <Mentor courseInfor={courseDetail.Guide} />
       </div>
     </>
   );

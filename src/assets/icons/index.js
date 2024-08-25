@@ -11,6 +11,7 @@ import internship from "./internship.png";
 import play from "./play.png";
 import certificate from "./certificate.png";
 import freelancer from "./freelancer.png";
+import linkedinTc from "./linkedin.png";
 
 export {
   logo,
@@ -26,4 +27,5 @@ export {
   play,
   certificate,
   internship,
+  linkedinTc,
 };

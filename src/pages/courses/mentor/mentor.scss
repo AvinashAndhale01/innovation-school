@@ -1,0 +1,39 @@
+.mentor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .guide-head {
+    padding: 40px 10px;
+    h2 {
+      text-align: center;
+      color: #17a2b8;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    h1 {
+      color: #00394f;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  .guide-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .mentor {
+    .guide-card {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mentor {
+    .guide-card {
+      grid-template-columns: 1fr;
+    }
+  }
+}

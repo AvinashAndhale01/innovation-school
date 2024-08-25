@@ -12,6 +12,8 @@ import play from "./play.png";
 import certificate from "./certificate.png";
 import freelancer from "./freelancer.png";
 import linkedinTc from "./linkedin.png";
+import modules from "./modules.png";
+import arrow from "./arrow.png";
 
 export {
   logo,
@@ -28,4 +30,6 @@ export {
   certificate,
   internship,
   linkedinTc,
+  modules,
+  arrow,
 };

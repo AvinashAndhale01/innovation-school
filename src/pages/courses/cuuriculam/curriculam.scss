@@ -1,0 +1,36 @@
+.curriculam {
+  background-color: #eefdff;
+  color: #001b25;
+  .curriculam-title {
+    h1 {
+      text-transform: uppercase;
+      color: #00394f;
+      font-weight: 600;
+      padding: 30px;
+      text-align: center;
+      margin-top: 50px;
+    }
+  }
+  .curriculam-info {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .curriculam {
+    .curriculam-info {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .curriculam {
+    .curriculam-info {
+      grid-template-columns: 1fr;
+    }
+  }
+}

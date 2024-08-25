@@ -1,0 +1,70 @@
+.curriculam-card-main {
+  .curriculam-head {
+    background-color: #17a2b8;
+    width: 350px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    .curriculam-card {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      color: #e0e8ea;
+      .c-img {
+        img {
+          height: 25px;
+        }
+      }
+      .c-module {
+        p {
+          padding: 10px 20px;
+          word-spacing: 1px;
+          font-weight: 400;
+          font-size: 17px;
+        }
+      }
+      .down-arrow {
+        .arrow-img {
+          transition: transform 0.4s ease;
+          img {
+            height: 25px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+
+        &.rotate .arrow-img {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .curriculam-des {
+      margin-top: 15px;
+      padding-right: 20px;
+      p {
+        color: #e0e8ea;
+        tab-size: 14px;
+      }
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 1s ease;
+    }
+    .curriculam-des.show {
+      max-height: 600px; /* Adjust this value based on your content's maximum height */
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .curriculam-card-main {
+    .curriculam-head {
+      .curriculam-card {
+        width: 330px;
+        padding: 5px;
+      }
+    }
+  }
+}

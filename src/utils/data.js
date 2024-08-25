@@ -78,9 +78,9 @@ export const courseInfo = {
   Curriculum: [
     {
       Module: 1,
-      Name: "Assessment Test",
+      Name: "Assessment Test & Check the prior knowledge of student.",
       Description:
-        "An initial assessment to evaluate the student's current knowledge in web development.",
+        "An initial assessment to evaluate the student's current knowledge in web development. And make some batches depends on performance.",
     },
     {
       Module: 2,

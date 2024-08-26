@@ -1,7 +1,8 @@
 import "./courseheadingcard.scss";
-const CourseHeadingCard = ({ title }) => {
+
+const CourseHeadingCard = ({ title, onClick }) => {
   return (
-    <div className="courseheadingcard">
+    <div className="courseheadingcard" onClick={onClick}>
       <div className="course-head">
         <p>{title}</p>
       </div>

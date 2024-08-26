@@ -13,7 +13,7 @@ const Courses = () => {
         </h1>
         <section className="card-section">
           {course?.map((course) => (
-            <Card courses={course} />
+            <Card courses={course} key={course.courseid} />
           ))}
         </section>
       </section>

@@ -6,6 +6,9 @@
     margin: 15px;
     padding: 15px;
     border-radius: 10px;
+    &:hover {
+      cursor: pointer;
+    }
     .curriculam-card {
       display: flex;
       justify-content: space-evenly;
@@ -30,9 +33,6 @@
           transition: transform 0.4s ease;
           img {
             height: 25px;
-            &:hover {
-              cursor: pointer;
-            }
           }
         }
 
@@ -44,14 +44,14 @@
     .curriculam-des {
       margin-top: 15px;
       padding-right: 20px;
-      p {
-        color: #e0e8ea;
-        tab-size: 14px;
-      }
       max-height: 0;
       overflow: hidden;
       opacity: 0;
       transition: max-height 0.4s ease, opacity 1s ease;
+      p {
+        color: #e0e8ea;
+        tab-size: 14px;
+      }
     }
     .curriculam-des.show {
       max-height: 600px;

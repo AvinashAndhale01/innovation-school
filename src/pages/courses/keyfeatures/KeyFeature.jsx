@@ -1,3 +1,4 @@
+import React from "react";
 import FeatureCard from "./FeatureCard";
 import "./keyfeature.scss";
 import {
@@ -7,9 +8,9 @@ import {
   play,
 } from "../../../assets/icons";
 
-const KeyFeature = () => {
+const KeyFeature = React.forwardRef((props, ref) => {
   return (
-    <div className="feature-header">
+    <div ref={ref} className="feature-header">
       <div className="key-feature">
         <div className="feature-heading">
           <h2>Key Features</h2>
@@ -31,6 +32,8 @@ const KeyFeature = () => {
       </div>
     </div>
   );
-};
+});
+
+KeyFeature.displayName = "KeyFeature";
 
 export default KeyFeature;

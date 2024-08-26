@@ -11,7 +11,7 @@ const CurriculamCard = ({ module }) => {
 
   return (
     <div className="curriculam-card-main">
-      <div className="curriculam-head">
+      <div className="curriculam-head" onClick={toggleDescription}>
         <div className="curriculam-card">
           <div className="c-img">
             <img src={modules} alt="module-img" />
@@ -21,10 +21,7 @@ const CurriculamCard = ({ module }) => {
               Module {module.Module}: {module.Name}
             </p>
           </div>
-          <div
-            className={`down-arrow ${isDescriptionVisible ? "rotate" : ""}`}
-            onClick={toggleDescription}
-          >
+          <div className={`down-arrow ${isDescriptionVisible ? "rotate" : ""}`}>
             <div className="arrow-img">
               <img src={arrow} alt="arrow-img" />
             </div>

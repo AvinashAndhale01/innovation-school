@@ -7,9 +7,20 @@ import {
   email,
   phone,
 } from "../../assets/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate("/");
+    window.scrollTo(0, 0);
+  };
+  const handleAboutClick = () => {
+    navigate("/");
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -65,10 +76,10 @@ const Footer = () => {
         <div className="useful-links">
           <h4>Company</h4>
           <div className="info">
-            <Link to="/" className="info-d">
+            <Link to="/" onClick={handleHomeClick} className="info-d">
               Home
             </Link>
-            <Link to="/about" className="info-d">
+            <Link to="/about" onClick={handleAboutClick} className="info-d">
               About Us
             </Link>
             <a href="#" className="info-d">

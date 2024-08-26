@@ -1,9 +1,11 @@
+import React from "react";
 import MentorCard from "./MentorCard";
 import "./mentor.scss";
 
-const Mentor = ({ courseInfor }) => {
+const Mentor = React.forwardRef((props, ref) => {
+  const { courseInfor } = props;
   return (
-    <div className="mentor">
+    <div ref={ref} className="mentor">
       <div className="guide-head">
         <h2>Meet Your</h2>
         <h1>Guide, Mentor</h1>
@@ -15,6 +17,8 @@ const Mentor = ({ courseInfor }) => {
       </div>
     </div>
   );
-};
+});
+
+Mentor.displayName = "Mentor";
 
 export default Mentor;

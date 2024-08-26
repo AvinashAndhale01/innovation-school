@@ -1,0 +1,60 @@
+.enroll-now {
+  display: flex;
+  height: 80px;
+  padding: 5px 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(45, 163, 182, 0.2);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+
+  .enroll-now-des {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      color: #014256;
+      font-size: 20px;
+    }
+  }
+
+  .enroll-now-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 60px;
+    max-width: 305px;
+    margin: 5px 20px;
+    background-color: #17a2b8;
+    color: white;
+    height: 60px;
+    border-radius: 10px;
+    &:hover {
+      background-color: #066a92;
+      cursor: pointer;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .enroll-now {
+    .enroll-now-des {
+      p {
+        font-size: 16px;
+      }
+    }
+    .enroll-now-button {
+      padding: 10px 20px;
+      height: 50px;
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}

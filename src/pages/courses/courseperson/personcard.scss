@@ -1,0 +1,28 @@
+.person-card {
+  margin-top: 20px;
+  padding: 20px;
+  color: #032b3b;
+  .person-card-img {
+    img {
+      height: 80px;
+    }
+  }
+  .person-card-name {
+    margin: 20px 0;
+    p {
+      word-spacing: 1px;
+      color: #04506e;
+      font-weight: 600;
+    }
+  }
+  .person-card-info {
+    p {
+      word-spacing: 1px;
+      font-weight: 500;
+    }
+  }
+  .horizontal-card-line {
+    border: 1px solid #032b3b;
+    margin-top: 20px;
+  }
+}

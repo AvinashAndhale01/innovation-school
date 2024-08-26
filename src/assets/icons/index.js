@@ -14,6 +14,9 @@ import freelancer from "./freelancer.png";
 import linkedinTc from "./linkedin.png";
 import modules from "./modules.png";
 import arrow from "./arrow.png";
+import student from "./student.png";
+import professional from "./professional.png";
+import freelancer1 from "./freelancer1.png";
 
 export {
   logo,
@@ -32,4 +35,7 @@ export {
   linkedinTc,
   modules,
   arrow,
+  student,
+  professional,
+  freelancer1,
 };

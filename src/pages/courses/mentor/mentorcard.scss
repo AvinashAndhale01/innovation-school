@@ -3,22 +3,24 @@
     display: flex;
     flex-direction: column;
     padding: 20px 10px;
-    margin: 30px 40px;
+    margin: 30px 15px;
     background-color: #17a2b8;
     border-radius: 10px;
-    width: 340px;
     box-shadow: 0px 5px 10px #59cbdc;
+    max-width: 350px;
     .img {
       display: flex;
       align-items: center;
       justify-content: center;
       img {
-        height: 180px;
+        max-height: 180px;
         border-radius: 20px;
       }
     }
+
     .card-info {
       padding: 20px 10px;
+
       .name {
         display: flex;
         align-items: center;
@@ -32,14 +34,17 @@
           }
         }
       }
+
       .mentor-identity {
         margin-top: 20px;
       }
+
       p {
         color: #e0e8ea;
         font-weight: 400;
         word-spacing: 1px;
       }
+
       .name {
         p {
           color: #dce6e9;
@@ -51,11 +56,11 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 360px) {
   .mentor-card {
     .mcard {
-      margin: 30px 5px;
-      width: 330px;
+      margin: 20px 8px;
+      padding: 15px 5px;
     }
   }
 }

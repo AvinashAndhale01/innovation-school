@@ -1,20 +1,19 @@
 .enroll-now {
-  display: flex;
+  display: none;
   height: 80px;
   padding: 5px 10px;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  background-color: rgba(45, 163, 182, 0.2);
+  background-color: rgba(35, 140, 156, 0.5);
   backdrop-filter: blur(10px);
   position: sticky;
-  top: 0;
 
   .enroll-now-des {
     display: flex;
     align-items: center;
     justify-content: center;
     p {
-      color: #014256;
+      color: #06252d;
       font-size: 20px;
     }
   }
@@ -42,18 +41,35 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .enroll-now {
+    display: flex;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .enroll-now {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .enroll-now {
+    height: 70px;
     .enroll-now-des {
       p {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
     .enroll-now-button {
       padding: 10px 20px;
       height: 50px;
       p {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
   }

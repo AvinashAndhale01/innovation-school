@@ -41,14 +41,15 @@
       }
       .list {
         ul {
-          line-height: 40px;
           li {
             padding-left: 30px;
             background-image: url("../../../assets/icons/checklist.png");
             background-repeat: no-repeat;
-            background-position: left center;
             list-style-type: none;
             background-size: 20px 20px;
+          }
+          .list-item {
+            margin-top: 20px;
           }
         }
       }
@@ -77,11 +78,6 @@
         }
         .des-head {
           font-size: 18px;
-        }
-        .list {
-          ul {
-            line-height: 30px;
-          }
         }
       }
     }

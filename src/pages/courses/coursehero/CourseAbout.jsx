@@ -19,10 +19,14 @@ const CourseAbout = ({ courseInfor }) => {
           <p className="des-head">This course will guide you on</p>
           <p className="list">
             <ul>
-              <li>Understanding the science behind going viral</li>
-              <li>Creating unique content every single day</li>
-              <li>Creating your own personal brand</li>
-              <li>Monetising your Instagram content</li>
+              <li className="list-item">
+                Understanding the science behind going viral
+              </li>
+              <li className="list-item">
+                Creating unique content every single day
+              </li>
+              <li className="list-item">Creating your own personal brand</li>
+              <li className="list-item">Monetising your Instagram content</li>
             </ul>
           </p>
         </div>

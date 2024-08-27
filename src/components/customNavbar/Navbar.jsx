@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./navbar.scss";
 import { logo } from "../../assets/icons";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <div className="nav">
       <nav className="navbar">
@@ -25,6 +25,9 @@ const Navbar = () => {
             <Link to="/about" className="li">
               About
             </Link>
+            <div className="btn" onClick={() => navigate("/signin")}>
+              Login
+            </div>
           </ul>
         </div>
       </nav>

@@ -26,6 +26,16 @@
       align-items: center;
       gap: 30px;
 
+      .btn {
+        padding: 10px 15px;
+        background: linear-gradient(#00394f, #17a2b8);
+        color: white;
+        border-radius: 5px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
       .li {
         list-style: none;
         margin-right: 2rem;

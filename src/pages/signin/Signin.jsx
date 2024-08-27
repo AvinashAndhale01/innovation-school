@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { email } from "../../assets/icons";
 import { loginApi } from "../../api/auth/auth";
 import {
@@ -7,6 +7,7 @@ import {
 } from "../../components/customToast/customToast";
 import CustomSpinner from "../../components/customSpinner/CustomSpinner";
 import { useNavigate } from "react-router-dom";
+import "./signin.scss";
 
 function Signin() {
   const initReqBody = {
@@ -53,18 +54,29 @@ function Signin() {
       {loading ? (
         <CustomSpinner />
       ) : (
-        <div>
-          <input
-            type="text"
-            value={reqBody.email}
-            onChange={(e) => handelChange("email", e.target.value)}
-          />
-          <input
-            type="password"
-            value={reqBody.password}
-            onChange={(e) => handelChange("password", e.target.value)}
-          />
-          <button onClick={handekSubmit}>Login</button>
+        <div className="sign-in">
+          <div className="sign-in-card">
+            <h2>Sign In</h2>
+            <div className="email">
+              <input
+                type="text"
+                value={reqBody.email}
+                onChange={(e) => handelChange("email", e.target.value)}
+                placeholder="email"
+              />
+            </div>
+            <div className="password">
+              <input
+                type="password"
+                value={reqBody.password}
+                onChange={(e) => handelChange("password", e.target.value)}
+                placeholder="password"
+              />
+            </div>
+            <div className="submit-btn">
+              <button onClick={handekSubmit}>Login</button>
+            </div>
+          </div>
         </div>
       )}
     </>

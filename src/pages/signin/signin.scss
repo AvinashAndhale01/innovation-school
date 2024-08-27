@@ -1,0 +1,50 @@
+.sign-in {
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+
+  .sign-in-card {
+    padding: 10px 20px;
+    background-color: #d7eaed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 5px;
+
+    h2 {
+      color: #01414b;
+      text-transform: uppercase;
+    }
+
+    .email,
+    .password {
+      input {
+        outline: none;
+        height: 35px;
+        width: 300px;
+        border-radius: 5px;
+        border: none;
+        background-color: white;
+        color: black;
+        padding: 0px 10px;
+      }
+    }
+    .submit-btn {
+      button {
+        border: none;
+        padding: 7px 20px;
+        background-color: #17a2b8;
+        color: white;
+        border-radius: 5px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

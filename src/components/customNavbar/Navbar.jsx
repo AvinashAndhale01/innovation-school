@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import "./navbar.scss";
 import { logo } from "../../assets/icons";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Navbar = () => {
   return (
@@ -25,6 +28,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+      <ToastContainer />
     </div>
   );
 };

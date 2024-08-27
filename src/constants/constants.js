@@ -1,1 +1,1 @@
-export const BASE_URL_API = ""
+export const BASE_URL_API = "https://school-inovation.onrender.com/api/v1"

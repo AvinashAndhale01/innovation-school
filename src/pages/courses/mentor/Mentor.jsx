@@ -11,8 +11,8 @@ const Mentor = React.forwardRef((props, ref) => {
         <h1>Guide, Mentor</h1>
       </div>
       <div className="guide-card">
-        {courseInfor.map((guide) => (
-          <MentorCard mentor={guide} key={guide.id} />
+        {courseInfor?.map((guide) => (
+          <MentorCard mentor={guide} key={guide._id} />
         ))}
       </div>
     </div>

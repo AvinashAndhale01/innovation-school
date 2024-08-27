@@ -1,10 +1,10 @@
-import { api } from "../api"
+import { api } from "../api";
 
-export const loginApi = async (payload) =>{
+export const loginApi = async (payload) => {
   return await api({
-        path: "/admin/signin",
-        method: "POST",
-        data: payload,
-        params: null,
-    })
-}
+    path: "/admin/signin",
+    method: "POST",
+    data: payload,
+    params: null,
+  });
+};

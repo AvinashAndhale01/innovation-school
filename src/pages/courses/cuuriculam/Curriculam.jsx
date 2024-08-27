@@ -11,7 +11,7 @@ const Curriculam = React.forwardRef((props, ref) => {
       </div>
       <div className="curriculam-info">
         {courseInfor.map((modules) => (
-          <CurriculamCard module={modules} key={modules.id} />
+          <CurriculamCard module={modules} key={modules._id} />
         ))}
       </div>
     </div>

@@ -1,10 +1,17 @@
+import { getAllCourses } from "../../../api/course";
 import Card from "../../../components/customCard/Card";
 import { courses } from "../../../utils/data";
 import "./courses.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Courses = () => {
-  const [course, setCourse] = useState(courses);
+  const [course, setCourse] = useState([]);
+  useEffect(() => {
+    getAllCourses().then((val) => {
+      setCourse(val.courses);
+      console.log(val);
+    });
+  }, []);
   return (
     <>
       <section id="course" className="courses">

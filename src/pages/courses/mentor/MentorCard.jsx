@@ -10,15 +10,15 @@ const MentorCard = ({ mentor }) => {
     <div className="mentor-card">
       <div className="mcard">
         <div className="img">
-          <img src={mentor.Img} />
+          <img src={mentor.img} />
         </div>
         <div className="card-info">
           <div className="name">
-            <p>{mentor.Name}</p>
+            <p>{mentor.name}</p>
             <img src={linkedinTc} onClick={handleLinkedInClick} />
           </div>
           <div className="mentor-identity">
-            <p className="mentor-info">{mentor.Identity}</p>
+            <p className="mentor-info">{mentor.identity}</p>
           </div>
         </div>
       </div>

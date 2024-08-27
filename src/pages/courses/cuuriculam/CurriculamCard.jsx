@@ -18,7 +18,7 @@ const CurriculamCard = ({ module }) => {
           </div>
           <div className="c-module">
             <p>
-              Module {module.Module}: {module.Name}
+              Module {module.module}: {module.name}
             </p>
           </div>
           <div className={`down-arrow ${isDescriptionVisible ? "rotate" : ""}`}>
@@ -28,7 +28,7 @@ const CurriculamCard = ({ module }) => {
           </div>
         </div>
         <div className={`curriculam-des ${isDescriptionVisible ? "show" : ""}`}>
-          <p>{module.Description}</p>
+          <p>{module.description}</p>
         </div>
       </div>
     </div>

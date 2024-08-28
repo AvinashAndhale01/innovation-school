@@ -5,17 +5,18 @@ const Hero = () => {
       <main className="hero">
         <div className="hero-des">
           <h1>
-            Innova<span>tion</span> School
+            Learn. Gr<span>ow.</span> Succeed !
           </h1>
           <h3>
-            We are No #1 educational <br /> platfrom in india
+            We are a top legal educational <br /> platfrom in india
           </h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
-            iste sapiente ipsa quisquam ea accusantium consectetur quasi harum
-            nobis ullam accusamus in dignissimos, quaerat, deleniti quam nihil
-            saepe assumenda, consequuntur alias sint? Fuga minima odio sequi
-            voluptates, expedita id aliquid!
+            legal innovation is a hub of law students working together to
+            provide a solution to every law-related problem. we are here to help
+            you with any legal needs. we offer a variety of legal opportunities
+            such as internships based on different legal aspects, legal courses,
+            legal competitions, and legal notes. <br />
+            <br /> our main goal is to provide quality education.
           </p>
         </div>
       </main>

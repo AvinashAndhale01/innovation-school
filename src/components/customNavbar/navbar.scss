@@ -14,7 +14,7 @@
 
   .company-logo {
     img {
-      height: 5rem;
+      height: 3rem;
       cursor: pointer;
     }
   }
@@ -53,7 +53,7 @@
     }
   }
 }
-// For mobile devices
+
 @media (max-width: 768px) {
   .navbar {
     justify-content: center;

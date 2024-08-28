@@ -11,6 +11,7 @@ const AddNewCourse = () => {
     const newGuides = Array.from({ length: numberOfGuides }, () => ({
       name: "",
       image: null,
+      linkedin: "",
       about: "",
     }));
     setGuides(newGuides);
@@ -73,6 +74,14 @@ const AddNewCourse = () => {
                 name={`guideImage${index}`}
                 id={`guideImage${index}`}
                 className="guide-image"
+              />
+
+              <label>Guide Linkedin Id {index + 1}:</label>
+              <input
+                type="text"
+                name={`guideLinkedin${index}`}
+                id={`guideLinkedin${index}`}
+                className="guide-linkedin"
               />
 
               <label>About Guide {index + 1}:</label>

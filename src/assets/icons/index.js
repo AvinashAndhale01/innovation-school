@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-import logo1 from "./logo.png";
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import youtube from "./youtube.svg";
@@ -21,7 +20,6 @@ import editicon from "./edit.png";
 
 export {
   logo,
-  logo1,
   instagram,
   linkedin,
   youtube,

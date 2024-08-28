@@ -1,6 +1,6 @@
 import "./dashboardhome.scss";
 import { editicon, deleteicon } from "../../assets/icons";
-import { getAllCourses } from "../../api/course";
+import { deleteCourseById, getAllCourses } from "../../api/course";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
@@ -12,7 +12,7 @@ const DashboardHome = () => {
   const navigate = useNavigate();
 
   const addNewCourse = () => {
-    navigate("/addnewcourse");
+    navigate("course/create");
   };
 
   const deleteCourse = (id) => {
@@ -21,19 +21,29 @@ const DashboardHome = () => {
   };
 
   const confirmDelete = () => {
-    alert(`Course with ID ${selectedCourseId} deleted!`);
+
+    deleteCourseById({
+      id:selectedCourseId
+    }).then(val =>{
+      console.log(val)
+      getCourses()
+    })
     setShowModal(false);
-    // Add your delete logic here
+
   };
 
   const closeModal = () => {
     setShowModal(false);
   };
 
-  useEffect(() => {
+  const getCourses = () => {
     getAllCourses().then((val) => {
       setCourse(val.courses);
     });
+  }
+
+  useEffect(() => {
+    getCourses()
   }, []);
 
   return (
@@ -62,13 +72,13 @@ const DashboardHome = () => {
                 <td>{index + 1}</td>
                 <td className="course-id-title">{val.title}</td>
                 <td>
-                  <img src={editicon} alt="Edit" />
+                  <img src={editicon} alt="Edit" onClick={()=> navigate("course/create/"+val._id)}/>
                 </td>
                 <td>
                   <img
                     src={deleteicon}
                     alt="Delete"
-                    onClick={() => deleteCourse(val.id)}
+                    onClick={() => deleteCourse(val._id)}
                   />
                 </td>
               </tr>

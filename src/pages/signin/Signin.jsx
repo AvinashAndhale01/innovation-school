@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { loginApi } from "../../api/auth/auth";
-import {
-  customToast,
-  toastTypes,
-} from "../../components/customToast/customToast";
+import { customToast, toastTypes } from "../../components/customToast/customToast";
 import CustomSpinner from "../../components/customSpinner/CustomSpinner";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../App"; // Adjust the import path as necessary
 import "./signin.scss";
 
 function Signin() {
@@ -17,13 +15,14 @@ function Signin() {
   const [reqBody, setReqBody] = useState(initReqBody);
   const [loading, setLoading] = useState(false);
 
+  const { login } = useAuth(); // Access login function from useAuth
   const navigate = useNavigate();
 
-  const handelChange = (name, value) => {
+  const handleChange = (name, value) => {
     setReqBody({ ...reqBody, [name]: value });
   };
 
-  const handekSubmit = () => {
+  const handleSubmit = () => {
     for (const i in reqBody) {
       if (reqBody[i] === "") {
         customToast(toastTypes.error, `Please Enter ${i}`);
@@ -34,9 +33,10 @@ function Signin() {
     loginApi(reqBody)
       .then((val) => {
         console.log(val);
-        if (val.success === true) {
+        if (val.success) {
           customToast(toastTypes.success, "Login Successfully !");
           localStorage.setItem("auth-Token", val.token);
+          login(); // Update authentication state
           navigate("/dashboard");
           setReqBody(initReqBody);
         } else {
@@ -60,7 +60,7 @@ function Signin() {
               <input
                 type="text"
                 value={reqBody.email}
-                onChange={(e) => handelChange("email", e.target.value)}
+                onChange={(e) => handleChange("email", e.target.value)}
                 placeholder="email"
               />
             </div>
@@ -68,12 +68,12 @@ function Signin() {
               <input
                 type="password"
                 value={reqBody.password}
-                onChange={(e) => handelChange("password", e.target.value)}
+                onChange={(e) => handleChange("password", e.target.value)}
                 placeholder="password"
               />
             </div>
             <div className="submit-btn">
-              <button onClick={handekSubmit}>Login</button>
+              <button onClick={handleSubmit}>Login</button>
             </div>
           </div>
         </div>

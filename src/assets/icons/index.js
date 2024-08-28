@@ -17,6 +17,8 @@ import arrow from "./arrow.png";
 import student from "./student.png";
 import professional from "./professional.png";
 import freelancer1 from "./freelancer1.png";
+import deleteicon from "./delete.png";
+import editicon from "./edit.png";
 
 export {
   logo,
@@ -38,4 +40,6 @@ export {
   student,
   professional,
   freelancer1,
+  deleteicon,
+  editicon,
 };

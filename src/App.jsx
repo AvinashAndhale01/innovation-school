@@ -7,6 +7,9 @@ import About from "./pages/about/About";
 import Courses from "./pages/home/componets/Courses";
 import CourseDescription from "./pages/courses/CourseDescription";
 import Signin from "./pages/signin/Signin";
+import Dashboard from "./pages/dashboard/Dashboard";
+import AddNewCourse from "./pages/dashboard/AddNewCourse";
+
 function App() {
   return (
     <Router>
@@ -17,7 +20,8 @@ function App() {
         <Route path="/course" element={<Courses />} />
         <Route path="about" element={<About />} />
         <Route path="/signin" element={<Signin />} />
-        
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/addnewcourse" element={<AddNewCourse />} />
       </Routes>
       <Footer />
     </Router>

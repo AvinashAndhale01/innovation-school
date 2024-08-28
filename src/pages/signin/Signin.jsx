@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { email } from "../../assets/icons";
 import { loginApi } from "../../api/auth/auth";
 import {
   customToast,
@@ -38,7 +37,7 @@ function Signin() {
         if (val.success === true) {
           customToast(toastTypes.success, "Login Successfully !");
           localStorage.setItem("auth-Token", val.token);
-          navigate("/");
+          navigate("/dashboard");
           setReqBody(initReqBody);
         } else {
           customToast(toastTypes.error, "Check Email or Password !");

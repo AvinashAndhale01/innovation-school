@@ -1,0 +1,71 @@
+.addnewcourse {
+  min-height: 90vh;
+  h2 {
+    text-align: center;
+    padding: 20px;
+    color: #00151d;
+  }
+  .new-course-form {
+    .new-course-editor {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 50px;
+      margin: 10px 10px;
+      label {
+        padding: 10px 0;
+        font-weight: 600;
+        color: #00212f;
+        margin-top: 20px;
+      }
+      input {
+        padding: 5px;
+        height: 30px;
+        outline: none;
+        width: 60vw;
+        border: none;
+        background-color: #e2ebef;
+        border-radius: 2px;
+        &:hover {
+          outline: solid 1px #b0babf;
+        }
+      }
+      #image,
+      .guide-image {
+        background-color: #fff;
+        width: 200px;
+      }
+      .add-number {
+        padding: 5px;
+        margin: 10px 0;
+        font-size: 12px;
+      }
+      .numberof-input {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 20px;
+      }
+    }
+    .submit-data-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        margin: 50px 0;
+        width: 70vw;
+        padding: 10px;
+        background-color: #075675;
+        color: #fff;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        word-spacing: 2px;
+        &:hover {
+          cursor: pointer;
+          background-color: #06465f;
+        }
+      }
+    }
+  }
+}

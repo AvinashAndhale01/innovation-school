@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { fileUpload } from "../../api/upload";
-import { createCourse, getCourseById, updateCourseById } from "../../api/course";
+import {
+  createCourse,
+  getCourseById,
+  updateCourseById,
+} from "../../api/course";
 import { useNavigate, useParams } from "react-router-dom";
 import { Input, Button, Upload, Form, message, Card } from "antd";
 import { UploadOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
@@ -37,24 +41,35 @@ const AddNewCourse = () => {
   const handleUpload = async (name, file) => {
     try {
       const { success, imageUrl } = await fileUpload({ file });
-      handleChange(name, success ? imageUrl : "https://picsum.photos/300/200", setReqBody);
+      handleChange(
+        name,
+        success ? imageUrl : "https://picsum.photos/300/200",
+        setReqBody
+      );
     } catch {
       message.error("Image upload failed, using placeholder.");
       handleChange(name, "https://picsum.photos/300/200", setReqBody);
     }
   };
 
-  const addGuide = () => setGuides([...guides, { name: "", img: "", identity: "" }]);
-  const removeGuide = (index) => setGuides(guides.filter((_, i) => i !== index));
+  const addGuide = () =>
+    setGuides([...guides, { name: "", img: "", identity: "" }]);
+  const removeGuide = (index) =>
+    setGuides(guides.filter((_, i) => i !== index));
 
-  const addModule = () => setModules([...modules, { module: "", name: "", description: "" }]);
-  const removeModule = (index) => setModules(modules.filter((_, i) => i !== index));
+  const addModule = () =>
+    setModules([...modules, { module: "", name: "", description: "" }]);
+  const removeModule = (index) =>
+    setModules(modules.filter((_, i) => i !== index));
 
   const handleSubmit = () => {
     const finalData = {
       ...reqBody,
       img: reqBody.img || "https://picsum.photos/300/200",
-      guide: guides.map((g) => ({ ...g, img: g.img || "https://picsum.photos/300/200" })),
+      guide: guides.map((g) => ({
+        ...g,
+        img: g.img || "https://picsum.photos/300/200",
+      })),
       curriculum: modules,
     };
     const apiCall = isEdit ? updateCourseById : createCourse;
@@ -67,7 +82,11 @@ const AddNewCourse = () => {
   return (
     <div className="addnewcourse" style={{ padding: "0 10%" }}>
       <h2>{isEdit ? "Edit Course" : "New Course"}</h2>
-      <Form layout="vertical" onFinish={handleSubmit} className="new-course-form">
+      <Form
+        layout="vertical"
+        onFinish={handleSubmit}
+        className="new-course-form"
+      >
         <Form.Item label="Course Title">
           <Input
             value={reqBody.title}
@@ -118,8 +137,15 @@ const AddNewCourse = () => {
             <Form.Item label="Guide Name">
               <Input
                 value={guide.name}
-                onChange={(e) => handleChange("name", e.target.value, (guides) =>
-                  setGuides(guides.map((g, i) => (i === index ? { ...g, name: e.target.value } : g))))}
+                onChange={(e) =>
+                  handleChange("name", e.target.value, (guides) =>
+                    setGuides(
+                      guides.map((g, i) =>
+                        i === index ? { ...g, name: e.target.value } : g
+                      )
+                    )
+                  )
+                }
               />
             </Form.Item>
             <Form.Item label="Guide Image">
@@ -136,8 +162,15 @@ const AddNewCourse = () => {
             <Form.Item label="Guide Identity">
               <Input
                 value={guide.identity}
-                onChange={(e) => handleChange("identity", e.target.value, (guides) =>
-                  setGuides(guides.map((g, i) => (i === index ? { ...g, identity: e.target.value } : g))))}
+                onChange={(e) =>
+                  handleChange("identity", e.target.value, (guides) =>
+                    setGuides(
+                      guides.map((g, i) =>
+                        i === index ? { ...g, identity: e.target.value } : g
+                      )
+                    )
+                  )
+                }
               />
             </Form.Item>
           </Card>
@@ -171,22 +204,43 @@ const AddNewCourse = () => {
               <Input
                 type="number"
                 value={module.module}
-                onChange={(e) => handleChange("module", e.target.value, (modules) =>
-                  setModules(modules.map((m, i) => (i === index ? { ...m, module: e.target.value } : m))))}
+                onChange={(e) =>
+                  handleChange("module", e.target.value, (modules) =>
+                    setModules(
+                      modules.map((m, i) =>
+                        i === index ? { ...m, module: e.target.value } : m
+                      )
+                    )
+                  )
+                }
               />
             </Form.Item>
             <Form.Item label="Module Name">
               <Input
                 value={module.name}
-                onChange={(e) => handleChange("name", e.target.value, (modules) =>
-                  setModules(modules.map((m, i) => (i === index ? { ...m, name: e.target.value } : m))))}
+                onChange={(e) =>
+                  handleChange("name", e.target.value, (modules) =>
+                    setModules(
+                      modules.map((m, i) =>
+                        i === index ? { ...m, name: e.target.value } : m
+                      )
+                    )
+                  )
+                }
               />
             </Form.Item>
             <Form.Item label="Module Description">
               <Input.TextArea
                 value={module.description}
-                onChange={(e) => handleChange("description", e.target.value, (modules) =>
-                  setModules(modules.map((m, i) => (i === index ? { ...m, description: e.target.value } : m))))}
+                onChange={(e) =>
+                  handleChange("description", e.target.value, (modules) =>
+                    setModules(
+                      modules.map((m, i) =>
+                        i === index ? { ...m, description: e.target.value } : m
+                      )
+                    )
+                  )
+                }
               />
             </Form.Item>
           </Card>
@@ -200,7 +254,11 @@ const AddNewCourse = () => {
           Add Module
         </Button>
 
-        <Button type="primary" htmlType="submit">
+        <Button
+          type="primary"
+          htmlType="submit"
+          style={{ display: "block", width: "60%", margin: "50px auto" }}
+        >
           {isEdit ? "Edit" : "Create"}
         </Button>
       </Form>

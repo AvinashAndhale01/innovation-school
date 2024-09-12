@@ -1,9 +1,12 @@
 import "./dashboardhome.scss";
-import { editicon, deleteicon } from "../../assets/icons";
+import { EditOutlined, DeleteOutlined, PlusOutlined } from "@ant-design/icons";
 import { deleteCourseById, getAllCourses } from "../../api/course";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Modal from "./Modal";
+import { Button, Modal, Table, Typography, Row, Col, message } from "antd";
+
+const { Title } = Typography;
+x;
 
 const DashboardHome = () => {
   const [course, setCourse] = useState([]);
@@ -20,13 +23,14 @@ const DashboardHome = () => {
     setShowModal(true);
   };
 
-  const confirmDelete = () => {
-    deleteCourseById({
-      id: selectedCourseId,
-    }).then((val) => {
-      console.log(val);
+  const confirmDelete = async () => {
+    try {
+      await deleteCourseById({ id: selectedCourseId });
+      message.success("Course deleted successfully");
       getCourses();
-    });
+    } catch (error) {
+      message.error("Failed to delete course");
+    }
     setShowModal(false);
   };
 
@@ -34,61 +38,86 @@ const DashboardHome = () => {
     setShowModal(false);
   };
 
-  const getCourses = () => {
-    getAllCourses().then((val) => {
-      setCourse(val.courses);
-    });
+  const getCourses = async () => {
+    try {
+      const { courses } = await getAllCourses();
+      setCourse(courses);
+    } catch (error) {
+      message.error("Failed to load courses");
+    }
   };
 
   useEffect(() => {
     getCourses();
   }, []);
 
+  const columns = [
+    {
+      title: "Id",
+      dataIndex: "id",
+      key: "id",
+      render: (text, record, index) => index + 1,
+    },
+    {
+      title: "Name",
+      dataIndex: "title",
+      key: "title",
+      className: "course-id-title",
+    },
+    {
+      title: "Edit",
+      key: "edit",
+      render: (text, record) => (
+        <Button
+          type="link"
+          icon={<EditOutlined />}
+          onClick={() => navigate("course/create/" + record._id)}
+        />
+      ),
+    },
+    {
+      title: "Delete",
+      key: "delete",
+      render: (text, record) => (
+        <Button
+          type="link"
+          danger
+          icon={<DeleteOutlined />}
+          onClick={() => deleteCourse(record._id)}
+        />
+      ),
+    },
+  ];
+
   return (
     <div className="dashboardhome">
-      <div className="dashboard-head">
-        <div className="dashboard-heading">
-          <h1>Admin Dashboard</h1>
-        </div>
-        <div className="dashboard-create-btn" onClick={addNewCourse}>
-          Create New Course
-        </div>
-      </div>
-      <div className="dashboard-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Edit</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {course?.map((val, index) => (
-              <tr key={val.id}>
-                <td>{index + 1}</td>
-                <td className="course-id-title">{val.title}</td>
-                <td>
-                  <img
-                    src={editicon}
-                    alt="Edit"
-                    onClick={() => navigate("course/create/" + val._id)}
-                  />
-                </td>
-                <td>
-                  <img
-                    src={deleteicon}
-                    alt="Delete"
-                    onClick={() => deleteCourse(val._id)}
-                  />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <Modal show={showModal} onClose={closeModal} onConfirm={confirmDelete} />
+      <Row className="dashboard-head" justify="space-between" align="middle">
+        <Col>
+          <Title level={2}>Admin Dashboard</Title>
+        </Col>
+        <Col>
+          <Button type="primary" icon={<PlusOutlined />} onClick={addNewCourse}>
+            Create New Course
+          </Button>
+        </Col>
+      </Row>
+      <Table
+        className="dashboard-table"
+        columns={columns}
+        dataSource={course}
+        rowKey="_id"
+        pagination={{ pageSize: 5 }}
+      />
+      <Modal
+        title="Confirm Delete"
+        visible={showModal}
+        onOk={confirmDelete}
+        onCancel={closeModal}
+        okText="Yes"
+        cancelText="No"
+      >
+        Are you sure you want to delete this course?
+      </Modal>
     </div>
   );
 };

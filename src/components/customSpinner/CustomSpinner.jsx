@@ -13,7 +13,6 @@ const CustomSpinner = () => {
           align-items: center;
           justify-content: center;
           border-width:"4px";
-          
         }
       `}</style>
     </div>

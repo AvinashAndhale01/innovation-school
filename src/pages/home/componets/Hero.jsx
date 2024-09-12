@@ -15,8 +15,8 @@ const Hero = () => {
             provide a solution to every law-related problem. we are here to help
             you with any legal needs. we offer a variety of legal opportunities
             such as internships based on different legal aspects, legal courses,
-            legal competitions, and legal notes. <br />
-            <br /> our main goal is to provide quality education.
+            legal competitions, and legal notes.{" "}
+            <span>our main goal is to provide quality education.</span>
           </p>
         </div>
       </main>

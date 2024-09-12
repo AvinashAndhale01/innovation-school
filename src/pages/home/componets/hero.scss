@@ -53,11 +53,15 @@
       width: 45rem;
       padding: 1.4rem;
       font-weight: 400;
-      letter-spacing: 0.1rem;
+      letter-spacing: 1px;
       text-align: justify;
       margin-top: 2rem;
       text-transform: capitalize;
       line-height: 25px;
+      span {
+        font-weight: 700;
+        color: #d1ebf6;
+      }
     }
   }
 }

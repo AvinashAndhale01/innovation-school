@@ -23,7 +23,6 @@ const DashboardHome = () => {
   const confirmDelete = () => {
     alert(`Course with ID ${selectedCourseId} deleted!`);
     setShowModal(false);
-    // Add your delete logic here
   };
 
   const closeModal = () => {

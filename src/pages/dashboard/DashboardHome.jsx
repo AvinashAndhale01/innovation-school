@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { Button, Modal, Table, Typography, Row, Col, message } from "antd";
 
 const { Title } = Typography;
-x;
 
 const DashboardHome = () => {
   const [course, setCourse] = useState([]);

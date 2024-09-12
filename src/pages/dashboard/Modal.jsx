@@ -1,27 +1,21 @@
+import { Modal as AntdModal, Button, Typography } from "antd";
 import "./modal.scss";
 
-const Modal = ({ show, onClose, onConfirm }) => {
-  if (!show) return null;
+const { Text } = Typography;
 
+const Modal = ({ show, onClose, onConfirm }) => {
   return (
-    <div className="modal-overlay">
-      <div className="modal">
-        <div className="modal-header">
-          <p>Do you want to delete this Course ?</p>
-          <button className="modal-close" onClick={onClose}>
-            X
-          </button>
-        </div>
-        <div className="modal-actions">
-          <button className="modal-btn" onClick={onConfirm}>
-            Yes
-          </button>
-          <button className="modal-btn" onClick={onClose}>
-            No
-          </button>
-        </div>
-      </div>
-    </div>
+    <AntdModal
+      visible={show}
+      onCancel={onClose}
+      onOk={onConfirm}
+      okText="Yes"
+      cancelText="No"
+      title="Confirm Delete"
+      centered
+    >
+      <Text>Do you want to delete this course?</Text>
+    </AntdModal>
   );
 };
 

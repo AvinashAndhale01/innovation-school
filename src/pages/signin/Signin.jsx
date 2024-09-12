@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { loginApi } from "../../api/auth/auth";
-import { customToast, toastTypes } from "../../components/customToast/customToast";
-import CustomSpinner from "../../components/customSpinner/CustomSpinner";
+import {
+  customToast,
+  toastTypes,
+} from "../../components/customToast/customToast";
+import { Spin, Card, Button, Form, Input, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../App"; // Adjust the import path as necessary
 import "./signin.scss";
+
+const { Title } = Typography;
 
 function Signin() {
   const initReqBody = {
@@ -23,24 +28,22 @@ function Signin() {
   };
 
   const handleSubmit = () => {
-    for (const i in reqBody) {
-      if (reqBody[i] === "") {
-        customToast(toastTypes.error, `Please Enter ${i}`);
-        return;
-      }
+    if (!reqBody.email || !reqBody.password) {
+      customToast(toastTypes.error, "Please fill in all fields.");
+      return;
     }
     setLoading(true);
     loginApi(reqBody)
       .then((val) => {
         console.log(val);
         if (val.success) {
-          customToast(toastTypes.success, "Login Successfully !");
+          customToast(toastTypes.success, "Login Successfully!");
           localStorage.setItem("auth-Token", val.token);
-          login(); // Update authentication state
+          login();
           navigate("/dashboard");
           setReqBody(initReqBody);
         } else {
-          customToast(toastTypes.error, "Check Email or Password !");
+          customToast(toastTypes.error, "Check Email or Password!");
         }
       })
       .finally(() => {
@@ -49,36 +52,51 @@ function Signin() {
   };
 
   return (
-    <>
-      {loading ? (
-        <CustomSpinner />
-      ) : (
-        <div className="sign-in">
-          <div className="sign-in-card">
-            <h2>Sign In</h2>
-            <div className="email">
-              <input
+    <div className="sign-in">
+      <Spin spinning={loading}>
+        <Card
+          className="sign-in-card"
+          bordered={false}
+          style={{ maxWidth: 400, margin: "0 auto" }}
+        >
+          <Title level={2} style={{ textAlign: "center" }}>
+            Sign In
+          </Title>
+          <Form layout="vertical" onFinish={handleSubmit}>
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[{ required: true, message: "Please enter your email!" }]}
+            >
+              <Input
                 type="text"
                 value={reqBody.email}
                 onChange={(e) => handleChange("email", e.target.value)}
-                placeholder="email"
+                placeholder="Enter your email"
               />
-            </div>
-            <div className="password">
-              <input
-                type="password"
+            </Form.Item>
+            <Form.Item
+              label="Password"
+              name="password"
+              rules={[
+                { required: true, message: "Please enter your password!" },
+              ]}
+            >
+              <Input.Password
                 value={reqBody.password}
                 onChange={(e) => handleChange("password", e.target.value)}
-                placeholder="password"
+                placeholder="Enter your password"
               />
-            </div>
-            <div className="submit-btn">
-              <button onClick={handleSubmit}>Login</button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" block>
+                Login
+              </Button>
+            </Form.Item>
+          </Form>
+        </Card>
+      </Spin>
+    </div>
   );
 }
 

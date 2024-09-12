@@ -17,3 +17,30 @@ export const getCourseById = async (payload) => {
     params: null,
   });
 };
+
+export const deleteCourseById = async (payload) => {
+  return await api({
+    path: `/course/courses/${payload.id}`,
+    method: "DELETE",
+    params: null,
+  });
+};
+
+
+export const updateCourseById = async (payload) => {
+  return await api({
+    path: `/course/courses/${payload.id}`,
+    method: "PUT",
+    params: null,
+    data: payload.payload
+  });
+};
+
+export const createCourse = async (payload) => {
+  return await api({
+    path: `/course/create`,
+    method: "POST",
+    data: payload,
+    params: null,
+  });
+};

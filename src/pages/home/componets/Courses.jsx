@@ -23,6 +23,7 @@ const Courses = () => {
             <Card courses={course} key={course.courseid} />
           ))}
         </section>
+       
       </section>
     </>
   );

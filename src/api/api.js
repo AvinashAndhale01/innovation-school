@@ -7,9 +7,14 @@ export const api = async ({ method, path, data, params, headers }) => {
     localStorage.getItem("auth-Token") || Cookies.get("token") || null;
 
   const defaultHeaders = {
-    "Content-Type": "application/json",
     Authorization: token ? `Bearer ${token}` : null,
   };
+
+  // If not form-data, default to JSON
+  const isFormData = data instanceof FormData;
+  if (!isFormData) {
+    defaultHeaders["Content-Type"] = "application/json";
+  }
 
   const finalHeaders = { ...defaultHeaders, ...headers };
 
@@ -23,14 +28,26 @@ export const api = async ({ method, path, data, params, headers }) => {
   const fetchOptions = {
     method,
     headers: finalHeaders,
-    body: method !== "GET" && method !== "HEAD" ? JSON.stringify(data) : null,
+    body: method !== "GET" && method !== "HEAD" ? (isFormData ? data : JSON.stringify(data)) : null,
   };
 
   try {
     const response = await fetch(url, fetchOptions);
+
+    // Handle non-200 responses
+    if (!response.ok) {
+      const errorData = await response.json();
+      const errorMessage = errorData.message || 'An error occurred';
+      customToast(toastTypes.error, errorMessage);
+      console.error("API error:", errorMessage);
+      throw new Error(errorMessage);
+    }
+
+    // Assume the response is JSON
     const result = await response.json();
     return result;
   } catch (error) {
+    // Handle errors
     customToast(toastTypes.error, error.message);
     console.error("API request error:", error);
     throw error;

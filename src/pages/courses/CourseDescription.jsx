@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import { courseInfo } from "../../utils/data";
+import { Spin } from "antd"; // Ensure Spin is imported
+import { getCourseById } from "../../api/course";
 import "./coursedescription.scss";
 import Header from "./header/Header";
 import CourseHero from "./coursehero/CourseHero";
@@ -10,51 +11,77 @@ import Mentor from "./mentor/Mentor";
 import Curriculam from "./cuuriculam/Curriculam";
 import CoursePerson from "./courseperson/CoursePerson";
 import EnrollNow from "./price/EnrollNow";
-import { getCourseById } from "../../api/course";
 
 const CourseDescription = () => {
   const { id } = useParams();
-  const [courseDetail, setCourseDetail] = useState(courseInfo);
-  const [courseId, setCourseId] = useState(id);
+  const [courseDetail, setCourseDetail] = useState(null);
+  const [courseId, setCourseId] = useState(id || null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null); // Added error state
 
   useEffect(() => {
-    getCourseById({ id: courseId }).then((val) => {
-      setCourseDetail(val.course);
-      console.log(val);
-    });
+    if (courseId !== null) {
+      setLoading(true);
+      getCourseById({ id: courseId })
+        .then((val) => {
+          setCourseDetail(val.course);
+          console.log(val);
+        })
+        .catch((err) => {
+          setError(err.message); // Handle error
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
   }, [courseId]);
 
   const featureRef = useRef(null);
   const curriculumRef = useRef(null);
   const mentorRef = useRef(null);
 
-  const scrollToFeature = () =>
+  const scrollToFeature = useCallback(() => {
     featureRef.current.scrollIntoView({ behavior: "smooth" });
-  const scrollToCurriculum = () =>
+  }, []);
+
+  const scrollToCurriculum = useCallback(() => {
     curriculumRef.current.scrollIntoView({ behavior: "smooth" });
-  const scrollToMentor = () =>
+  }, []);
+
+  const scrollToMentor = useCallback(() => {
     mentorRef.current.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
+  if (loading) {
+    return (
+      <div style={{ height: "90vh", display: "grid", placeContent: "center" }}>
+        <Spin spinning={loading} />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>; // Display error if any
+  }
 
   return (
-    <>
-      <div>
-        <EnrollNow />
-        <Header
-          onFeatureClick={scrollToFeature}
-          onCurriculumClick={scrollToCurriculum}
-          onMentorClick={scrollToMentor}
-        />
-        <CourseHero courseInfor={courseDetail} />
-        <CourseAbout courseInfor={courseDetail} />
-        <KeyFeature ref={featureRef} />
-        <Mentor courseInfor={courseDetail?.guide} ref={mentorRef} />
-        <Curriculam
-          courseInfor={courseDetail?.curriculum}
-          ref={curriculumRef}
-        />
-        <CoursePerson />
-      </div>
-    </>
+    <div>
+      <EnrollNow courseDetail={courseDetail} />
+      <Header
+        onFeatureClick={scrollToFeature}
+        onCurriculumClick={scrollToCurriculum}
+        onMentorClick={scrollToMentor}
+      />
+      <CourseHero courseInfor={courseDetail} />
+      <CourseAbout courseInfor={courseDetail} />
+      <KeyFeature ref={featureRef} />
+      <Mentor courseInfor={courseDetail?.guide} ref={mentorRef} />
+      <Curriculam
+        courseInfor={courseDetail?.curriculum}
+        ref={curriculumRef}
+      />
+      <CoursePerson />
+    </div>
   );
 };
 

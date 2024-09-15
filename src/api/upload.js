@@ -1,11 +1,13 @@
 import { api } from "./api";
 
-export const fileUpload = async (payload) => {
+export const fileUpload = async (file) => {
+  const formData = new FormData();
+  formData.append("file", file);
+
   return await api({
     path: "/upload",
     method: "POST",
-    data: payload,
-    params: null,
+    data: formData,
+
   });
 };
-

@@ -6,9 +6,13 @@
   border-radius: 10px;
   margin: 20px 30px;
   .course-head {
+    
     p {
       font-size: 15px;
     }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &:hover {
     cursor: pointer;

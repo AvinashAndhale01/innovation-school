@@ -13,20 +13,20 @@ const CourseAbout = ({ courseInfor }) => {
         </div>
         <div className="description">
           <p>
-            If you aspire to become an Instagram influencer with the power of
-            your content, but feel clueless when it comes to…
+            {courseInfor?.aboutCourse?.title}
           </p>
           <p className="des-head">This course will guide you on</p>
           <p className="list">
             <ul>
-              <li className="list-item">
-                Understanding the science behind going viral
-              </li>
-              <li className="list-item">
-                Creating unique content every single day
-              </li>
-              <li className="list-item">Creating your own personal brand</li>
-              <li className="list-item">Monetising your Instagram content</li>
+              {
+                courseInfor?.aboutCourse?.points?.map(val=>{
+                  return (
+                      <li className="list-item">
+                        {val}
+                      </li>
+                  )
+                })
+              }
             </ul>
           </p>
         </div>

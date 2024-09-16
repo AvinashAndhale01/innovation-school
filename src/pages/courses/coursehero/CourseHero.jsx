@@ -16,7 +16,7 @@ const CourseHero = ({ courseInfor }) => {
         </div>
         <div className="c-info">
           <div className="hour">
-            <p>duration
+            <p>
                 {courseInfor?.duration}
             </p>
           </div>

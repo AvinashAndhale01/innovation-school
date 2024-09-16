@@ -16,9 +16,9 @@ const CourseHero = ({ courseInfor }) => {
         </div>
         <div className="c-info">
           <div className="hour">
-            <p>
+
                 {courseInfor?.duration}
-            </p>
+
           </div>
           <div className="enroll"> <a style={{color:"white", textDecoration: "none"}} href={courseInfor?.paymentUrl}> Enroll Now </a></div>
         </div>

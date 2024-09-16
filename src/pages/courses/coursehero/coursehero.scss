@@ -43,6 +43,9 @@
       display: flex;
       flex-direction: column;
       .hour {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: 2px dotted black;
         padding: 10px 20px;
         margin: 20px 0;

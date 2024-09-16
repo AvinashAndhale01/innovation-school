@@ -32,7 +32,7 @@ export const updateCourseById = async (payload) => {
     path: `/course/courses/${payload.id}`,
     method: "PUT",
     params: null,
-    data: payload.payload
+    data: {...payload.payload}
   });
 };
 

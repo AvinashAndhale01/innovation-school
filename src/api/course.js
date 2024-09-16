@@ -40,7 +40,7 @@ export const createCourse = async (payload) => {
   return await api({
     path: `/course/create`,
     method: "POST",
-    data: payload,
+    data: payload.payload,
     params: null,
   });
 };

@@ -11,7 +11,6 @@ const AddNewCourse = () => {
   const [isEdit, setIsEdit] = useState(id || null);
 
   const initReqBody = {
-    id: isEdit,
     title: "",
     about: "",
     img: "",
@@ -152,7 +151,7 @@ const AddNewCourse = () => {
   const handleSubmit = () => {
     setLoading(true);
     const apiCall = isEdit ? updateCourseById : createCourse;
-    apiCall({ payload: reqBody })
+    apiCall({ id: isEdit, payload: {...reqBody} })
       .then((val) => {
         if (val.success) {
           message.success(val.message);
